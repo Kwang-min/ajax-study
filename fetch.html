@@ -4,11 +4,32 @@
         <article>
         </article>
         <input type="button" value="fetch" onclick="
+        
             fetch('css').then(function(response){
                 response.text().then(function(text){
                     document.querySelector('article').innerHTML = text;
                 })
             })
+            
+            //응답이 오면 then의 콜백함수의 인자에 response 사용하라고 친절하게 넣어준다.
+            //response는 응답에 대한 여러가지 정보들을 담고 있는 객체라서 
+            //response객체의 부분들을 사용할 수 있다.
+            //(아래는 status 사용예시.javascript 파일이 서버에 없으면 404뜬다. 잘 되면 200줌.)
+            
+            /*    
+            fetch('javascript').then(function(response){
+                if(response.status == '404') {
+                    alert('Not found!');
+                }
+            });
+            console.log(1);
+            console.log(2);
+
+            */
+            //conssole.log 1과 2가 먼저 실행된다. 비동기 처리이기 때문에 
+            //fetch요청 후 응답이 올 때까지 기다리지 않고 먼저 일을 하고 그 뒤에
+            //응답이 오면 따로 fetch구문?이 실행된다. 
+            //비동기는 기다려주지 않고 남남처럼 따로따로 일함!
         ">
     </body>
 </html>
