@@ -9,7 +9,7 @@
                 response.text().then(function(text){
                     document.querySelector('article').innerHTML = text;
                 })
-            })
+            });
             
             //응답이 오면 then의 콜백함수의 인자에 response 사용하라고 친절하게 넣어준다.
             //response는 응답에 대한 여러가지 정보들을 담고 있는 객체라서 
